@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+node-v20.18.0-darwin-x64/
+node.tar.gz

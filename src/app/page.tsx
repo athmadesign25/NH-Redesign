@@ -1,66 +1,49 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import type { Metadata } from 'next';
+import HeroSection from '@/components/sections/HeroSection';
+import SpecialitiesGrid from '@/components/sections/SpecialitiesGrid';
+import WhyChooseNH from '@/components/sections/WhyChooseNH';
+import ChairmanQuote from '@/components/sections/ChairmanQuote';
+import PatientReviews from '@/components/sections/PatientReviews';
+import HospitalsGrid from '@/components/sections/HospitalsGrid';
+import ProceduresSection from '@/components/sections/ProceduresSection';
+import HealthPackages from '@/components/sections/HealthPackages';
+import AppDownloadBanner from '@/components/sections/AppDownloadBanner';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Narayana Health — Trusted Care, Every Day',
+  description: 'India\'s leading hospital network. 24+ hospitals, 30+ specialities, 2.5M+ patients treated. Book appointments with top doctors across Bangalore, Delhi, Kolkata and more.',
+  alternates: { canonical: 'https://www.narayanahealth.org' },
+};
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      {/* 1. Hero — scroll-pinned zoom from hospital to patient at home */}
+      <HeroSection />
+
+      {/* 3. Specialities Grid — 5-col, hover blue fill */}
+      <SpecialitiesGrid />
+
+      {/* 8. Health Packages — carousel */}
+      <HealthPackages />
+
+      {/* 7. Procedures — accent bar list, sticky label */}
+      <ProceduresSection />
+
+      {/* 6. Hospitals Grid — 3-col, hover lift */}
+      <HospitalsGrid />
+
+      {/* 4. Why Choose NH */}
+      <WhyChooseNH />
+
+      {/* Chairman Quote */}
+      <ChairmanQuote />
+
+      {/* Patient Reviews Carousel */}
+      <PatientReviews />
+
+      {/* 12. App Download Banner — badge hover effects */}
+      <AppDownloadBanner />
+    </>
   );
 }
