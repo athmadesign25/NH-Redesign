@@ -63,7 +63,7 @@ function PointItem({ point, align, index, globalIndex }: { point: any, align: 'l
 
   return (
     <motion.div 
-      variants={customFadeInUp}
+      variants={customFadeInUp as any}
       className={`point-item point-${align}-${index}`}
       style={{ 
         display: 'flex', 
