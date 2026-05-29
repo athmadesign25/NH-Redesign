@@ -57,7 +57,7 @@ function PointItem({ point, align, index, globalIndex }: { point: any, align: 'l
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.0, 0.0, 0.2, 1], delay: globalIndex * 0.12 }
+      transition: { duration: 0.6, ease: 'easeOut', delay: globalIndex * 0.12 }
     }
   };
 
